@@ -123,7 +123,21 @@ class NoteListViewController: UITableViewController {
     }
     
     
-    
+    //MARK: - Update note func
+    func updateNote(with title: String, image: UIImage?, location: String?) {
+        notes = []
+        let newNote = Note(context: context)
+        if let image = image {
+            let timestamp = String(NSDate().timeIntervalSince1970)
+            newNote.imageName = timestamp
+            self.saveImage(timestamp, image: image)
+        }
+        newNote.location = location ?? ""
+        newNote.title = title
+        newNote.parentFolder = selectedFolder
+        saveNotes()
+        loadNotes()
+    }
     
     /*
     // Override to support rearranging the table view.
