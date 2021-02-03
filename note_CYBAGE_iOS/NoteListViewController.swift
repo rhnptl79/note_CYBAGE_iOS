@@ -192,6 +192,12 @@ class NoteListViewController: UITableViewController {
     
     // MARK: - Navigation
 
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        guard identifier != "moveNoteSegue" else {  return true }
+        return deletingMovingOption ? false : true
+    }
+    
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
@@ -214,5 +220,26 @@ class NoteListViewController: UITableViewController {
         }
     }
     
+    @IBAction func unwindToNoteTVC(_ unwindSegue: UIStoryboardSegue) {
+        saveNotes()
+        loadNotes()
+        tableView.setEditing(false, animated: true)
+    }
+    
+    func saveImage(_ fileName: String, image: UIImage) {
+        let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let fileURL = documentsDirectory.appendingPathComponent(fileName)
+        if let data = image.jpegData(compressionQuality:  1.0),
+          !FileManager.default.fileExists(atPath: fileURL.path) {
+            do {
+                try data.write(to: fileURL)
+                print("file saved")
+            } catch {
+                print("error saving file:", error)
+            }
+        }
+    }
+    
+}
 
 }
