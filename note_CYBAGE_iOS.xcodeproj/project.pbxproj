@@ -15,6 +15,7 @@
 		EAE78AB225CA92760050328A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAE78AB125CA92760050328A /* Assets.xcassets */; };
 		EAE78AB525CA92760050328A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAE78AB325CA92760050328A /* LaunchScreen.storyboard */; };
 		EAE78ABE25CA9D5E0050328A /* folderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE78ABD25CA9D5E0050328A /* folderListViewController.swift */; };
+		EAE78AC125CAA4240050328A /* NoteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE78AC025CAA4240050328A /* NoteListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		EAE78AB425CA92760050328A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EAE78AB625CA92760050328A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EAE78ABD25CA9D5E0050328A /* folderListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = folderListViewController.swift; sourceTree = "<group>"; };
+		EAE78AC025CAA4240050328A /* NoteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				EAE78AB625CA92760050328A /* Info.plist */,
 				EAE78AAE25CA92750050328A /* note_CYBAGE_iOS.xcdatamodeld */,
 				EAE78ABD25CA9D5E0050328A /* folderListViewController.swift */,
+				EAE78AC025CAA4240050328A /* NoteListViewController.swift */,
 			);
 			path = note_CYBAGE_iOS;
 			sourceTree = "<group>";
@@ -145,6 +148,7 @@
 			files = (
 				EAE78AAA25CA92750050328A /* ViewController.swift in Sources */,
 				EAE78AA625CA92750050328A /* AppDelegate.swift in Sources */,
+				EAE78AC125CAA4240050328A /* NoteListViewController.swift in Sources */,
 				EAE78AB025CA92750050328A /* note_CYBAGE_iOS.xcdatamodeld in Sources */,
 				EAE78ABE25CA9D5E0050328A /* folderListViewController.swift in Sources */,
 				EAE78AA825CA92750050328A /* SceneDelegate.swift in Sources */,
