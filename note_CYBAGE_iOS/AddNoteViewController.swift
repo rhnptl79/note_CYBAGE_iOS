@@ -64,11 +64,17 @@ class AddNoteViewController: UITableViewController, CLLocationManagerDelegate {
     }
     
     @IBAction func addPhoto(_ sender: UIBarButtonItem) {
+        noteTextView.resignFirstResponder()
+        let cameraPicker = UIImagePickerController()
+        if(UIImagePickerController .isSourceTypeAvailable(.savedPhotosAlbum)){
+            cameraPicker.sourceType = .photoLibrary
+            cameraPicker.delegate = self
+            self.present(cameraPicker, animated: true, completion: nil)
+        }
+        else {
+        }
+        
     }
-    
-    
-    
-    
     
     func addDoneButtonOnKeyboard(){
         let doneToolbar: UIToolbar = UIToolbar(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
@@ -88,6 +94,13 @@ class AddNoteViewController: UITableViewController, CLLocationManagerDelegate {
         noteTextView.resignFirstResponder()
     }
 
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations
+        locations: [CLLocation]) {
+        let locValue:CLLocationCoordinate2D = manager.location!.coordinate
+        let val = "Latitude - \(locValue.latitude)   Longitude - \(locValue.longitude)"
+        self.labelCoordinates.text = val
+    }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {

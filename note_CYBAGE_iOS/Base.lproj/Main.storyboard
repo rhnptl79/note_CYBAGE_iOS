@@ -203,7 +203,7 @@
                     <navigationItem key="navigationItem" id="tmP-St-JYg">
                         <barButtonItem key="rightBarButtonItem" title="Add Image" id="fSY-RY-1v1">
                             <connections>
-                                <action selector="addPhoto:" destination="GL4-Cl-tdI" id="w8r-T8-6am"/>
+                                <action selector="addPhoto:" destination="GL4-Cl-tdI" id="AuO-nr-Ym5"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -215,7 +215,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rEw-OF-gLp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4172" y="108.39580209895054"/>
+            <point key="canvasLocation" x="4171" y="272"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="72N-p9-Ab3">
