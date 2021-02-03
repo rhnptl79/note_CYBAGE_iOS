@@ -9,6 +9,23 @@ import UIKit
 import CoreLocation
 
 class AddNoteViewController: UITableViewController, CLLocationManagerDelegate {
+    
+    
+    
+    
+    
+    
+    var locationManager = CLLocationManager()
+
+    var selectedNote: Note?{
+        didSet{
+           editMode = true
+        }
+    }
+    
+    var editMode: Bool = false
+    
+    weak var delegate: NoteListViewController?
 
     override func viewDidLoad() {
         super.viewDidLoad()

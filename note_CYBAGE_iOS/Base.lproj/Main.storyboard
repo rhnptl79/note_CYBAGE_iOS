@@ -157,10 +157,10 @@
             </objects>
             <point key="canvasLocation" x="3343" y="110"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Note View Controller-->
         <scene sceneID="W9X-QQ-aHC">
             <objects>
-                <viewController id="GL4-Cl-tdI" sceneMemberID="viewController">
+                <viewController id="GL4-Cl-tdI" customClass="AddNoteViewController" customModule="note_CYBAGE_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bJV-py-L8c">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
