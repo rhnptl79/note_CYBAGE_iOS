@@ -50,6 +50,10 @@ class NoteListViewController: UITableViewController {
         }
     }
     
+    @IBAction func moveBtnPressed(_ sender: UIBarButtonItem) {
+        self.performSegue(withIdentifier: "NoteListToMoveFolder", sender: self)
+    }
+    
     
     @IBAction func backBtnTap(_ sender: UIBarButtonItem) {
         self.navigationController?.popViewController(animated: true)

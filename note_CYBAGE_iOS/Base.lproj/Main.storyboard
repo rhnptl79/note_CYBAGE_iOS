@@ -54,7 +54,7 @@
                     <navigationItem key="navigationItem" title="Folders" id="Lgy-AR-3Iy">
                         <barButtonItem key="rightBarButtonItem" title="New Folder" image="folder.badge.plus" catalog="system" id="TBx-vu-Vxq">
                             <connections>
-                                <action selector="addFolderBtnPressed:" destination="AXK-44-bpr" id="ORX-iY-7Hk"/>
+                                <action selector="addFolderBtnPressed:" destination="qJj-IT-ctB" id="rm2-BL-pCu"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -62,7 +62,6 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tmq-Fj-pXN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="AXK-44-bpr" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2546.376811594203" y="109.82142857142857"/>
         </scene>
@@ -125,7 +124,7 @@
                             </barButtonItem>
                             <barButtonItem enabled="NO" title="Move Item" image="tray.and.arrow.down" catalog="system" id="3Mj-3f-Ckh">
                                 <connections>
-                                    <segue destination="UMo-XV-U8t" kind="show" id="3sV-V1-ofk"/>
+                                    <action selector="moveBtnPressed:" destination="14e-rg-7Uy" id="Xdg-7H-ba9"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem enabled="NO" title="Trash Item" image="trash" catalog="system" id="d8y-xC-jp4">
@@ -151,6 +150,7 @@
                     <connections>
                         <outlet property="moveBtn" destination="3Mj-3f-Ckh" id="Avc-aj-hoP"/>
                         <outlet property="trashBtn" destination="d8y-xC-jp4" id="gj3-9y-hRM"/>
+                        <segue destination="UMo-XV-U8t" kind="show" identifier="NoteListToMoveFolder" id="8mr-04-8rf"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mdW-KC-BFx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
