@@ -129,7 +129,7 @@ class AddNoteViewController: UITableViewController, CLLocationManagerDelegate {
 
     
     //Confirming The Add notes part
-    
+    //Received The Changes
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
