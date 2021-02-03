@@ -101,6 +101,20 @@ class AddNoteViewController: UITableViewController, CLLocationManagerDelegate {
         let val = "Latitude - \(locValue.latitude)   Longitude - \(locValue.longitude)"
         self.labelCoordinates.text = val
     }
+    
+    
+    func getImage(_ fileName: String)-> UIImage? {
+           let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+           let fileURL = documentsDirectory.appendingPathComponent(fileName)
+           if FileManager.default.fileExists(atPath: fileURL.path){
+               if let data = try? Data(contentsOf: fileURL) {
+                   return UIImage(data: data)
+               }
+           }
+           return nil
+       }
+    
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
