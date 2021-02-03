@@ -70,6 +70,34 @@ extension MoveNotesViewController: UITableViewDelegate, UITableViewDataSource{
         return folders.count
     }
 
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = UITableViewCell(style: .default, reuseIdentifier: "")
+        cell.textLabel?.text = folders[indexPath.row].name
+        cell.textLabel?.textColor = .black
+        return cell
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let alert = UIAlertController(title: "Move to \(folders[indexPath.row].name!)", message: "Are you Sure?", preferredStyle: .alert)
+        let yesAction = UIAlertAction(title: "Move", style: .default) { (action) in
+            for note in self.selectedNotes!{
+                note.parentFolder = self.folders[indexPath.row]
+            }
+            //dismiss the vc
+            self.performSegue(withIdentifier: "dismissMoveToVC", sender: self)
+        }
+        
+        let noAction = UIAlertAction(title: "No", style: .cancel, handler: nil)
+//        noAction.setValue(UIColor.orange, forKey: "titleTextColor")
+        alert.addAction(yesAction)
+        alert.addAction(noAction)
+        present(alert, animated: true, completion: nil)
+        
+    }
+    
+    
 
 
 }
