@@ -169,4 +169,13 @@ extension folderListViewController{
         return folders.count
     }
     
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "folder_cell", for: indexPath)
+        cell.textLabel?.text = folders[indexPath.row].name
+        cell.detailTextLabel?.text = "\(folders[indexPath.row].notes?.count ?? 0)"
+        cell.imageView?.image = UIImage(systemName: "folder")
+        cell.selectionStyle = .none
+        return cell
+    }
+    
 }
