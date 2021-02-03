@@ -41,15 +41,25 @@ class NoteListViewController: UITableViewController {
     //MARK:- Action Methods
     
     @IBAction func trashBtnPressed(_ sender: UIBarButtonItem) {
+        if let indexPaths = tableView.indexPathsForSelectedRows {
+            let rows = (indexPaths.map {$0.row}).sorted(by: >)
+            let _ = rows.map { deleteNote(note: notes[$0])}
+            let _ = rows.map {notes.remove(at: $0)}
+            tableView.reloadData()
+            saveNotes()
+        }
     }
     
     
     @IBAction func backBtnTap(_ sender: UIBarButtonItem) {
+        self.navigationController?.popViewController(animated: true)
     }
     
-    
-    
     @IBAction func editingBtnPressed(_ sender: UIBarButtonItem) {
+        deletingMovingOption = !deletingMovingOption
+        trashBtn.isEnabled = !trashBtn.isEnabled
+        moveBtn.isEnabled = !moveBtn.isEnabled
+        tableView.setEditing(deletingMovingOption, animated: true)
     }
     
     // MARK: - Table view data source
@@ -153,6 +163,8 @@ class NoteListViewController: UITableViewController {
         }
         
     }
+    
+    
     
     /*
     // Override to support rearranging the table view.
