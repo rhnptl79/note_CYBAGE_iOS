@@ -24,10 +24,28 @@ class folderListViewController: UITableViewController {
         tableView.tableFooterView = UIView()
 
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.getFolderFromDataBase()
+        tableView.reloadData()
+    }
+    
+    //Mark: - Get all folders from the databse.
+    func getFolderFromDataBase()
+    {
+        let request: NSFetchRequest<Folder> = Folder.fetchRequest()
+        do{
+            folders = try context.fetch(request)
+        }catch{
+            print("Error Loading Folders \(error.localizedDescription)")
+        }
+        tableView.reloadData()
+    }
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    /*override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 0
     }
@@ -35,7 +53,7 @@ class folderListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return 0
-    }
+    }*/
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
