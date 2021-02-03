@@ -164,6 +164,14 @@ class NoteListViewController: UITableViewController {
         
     }
     
+    func showSearchBar(){
+        searchController.searchBar.delegate = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search Note"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+        searchController.searchBar.searchTextField.textColor = .lightGray
+    }
     
     
     /*
@@ -181,14 +189,30 @@ class NoteListViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        
+        if let destination = segue.destination as? AddNoteViewController {
+            destination.delegate = self
+            if let cell = sender as? UITableViewCell {
+                if let index = tableView.indexPath(for: cell)?.row {
+                    destination.selectedNote = notes[index]
+                }
+            }
+        }
+        
+        if let destination = segue.destination as? MoveNotesViewController {
+            if let index = tableView.indexPathsForSelectedRows{
+                let rows = index.map{$0.row}
+                destination.selectedNotes = rows.map{notes[$0]}
+            }
+        }
     }
-    */
+    
 
 }
