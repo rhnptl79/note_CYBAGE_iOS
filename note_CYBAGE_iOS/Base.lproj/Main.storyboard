@@ -217,10 +217,10 @@
             </objects>
             <point key="canvasLocation" x="4181" y="110"/>
         </scene>
-        <!--View Controller-->
+        <!--Move Notes View Controller-->
         <scene sceneID="72N-p9-Ab3">
             <objects>
-                <viewController id="UMo-XV-U8t" sceneMemberID="viewController">
+                <viewController id="UMo-XV-U8t" customClass="MoveNotesViewController" customModule="note_CYBAGE_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oRI-79-bpS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -281,7 +281,7 @@
                     <navigationItem key="navigationItem" id="UWW-cZ-iGV"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="tblView" destination="64E-qa-bfp" id="GzK-m7-Pcc"/>
+                        <outlet property="tblView" destination="64E-qa-bfp" id="web-ne-jER"/>
                         <segue destination="W2P-fL-Q0w" kind="unwind" identifier="dismissMoveToVC" unwindAction="unwindToNoteTVC:" id="uQd-fY-O3U"/>
                     </connections>
                 </viewController>
