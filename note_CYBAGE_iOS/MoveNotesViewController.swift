@@ -25,6 +25,20 @@ class MoveNotesViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    func loadFolders(){
+        
+        let request: NSFetchRequest<Folder> = Folder.fetchRequest()
+        
+        //predicate
+        let folderPredicate = NSPredicate(format: "NOT name MATCHES %@", selectedNotes?[0].parentFolder?.name ?? "")
+        request.predicate = folderPredicate
+        
+        do{
+            folders = try context.fetch(request)
+        }catch{
+            print("Error fetching data \(error.localizedDescription)")
+        }
+    }
 
     /*
     // MARK: - Navigation
