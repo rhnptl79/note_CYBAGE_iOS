@@ -11,8 +11,9 @@ import CoreLocation
 class AddNoteViewController: UITableViewController, CLLocationManagerDelegate {
     
     
-    
-    
+    @IBOutlet weak var noteTextView: UITextView!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var labelCoordinates: UILabel!
     
     
     var locationManager = CLLocationManager()
