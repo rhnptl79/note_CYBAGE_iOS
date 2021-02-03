@@ -159,6 +159,14 @@ class folderListViewController: UITableViewController {
         }
 
     }
-    
+}
 
+//MARK: - Table View Data Source
+
+extension folderListViewController{
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return folders.count
+    }
+    
 }
