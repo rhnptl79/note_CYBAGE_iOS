@@ -26,6 +26,8 @@ class MoveNotesViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.tblView.tableFooterView = UIView()
+
     }
     
     func loadFolders(){
@@ -41,6 +43,12 @@ class MoveNotesViewController: UIViewController {
         }catch{
             print("Error fetching data \(error.localizedDescription)")
         }
+    }
+    
+    //IB action method
+    
+    @IBAction func dismissVC(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
     }
 
     /*
