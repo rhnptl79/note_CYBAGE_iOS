@@ -101,7 +101,30 @@ class NoteListViewController: UITableViewController {
         }
     }
     
-
+    //MARK: - Load Notes func
+    func loadNotes(predicate:NSPredicate? = nil){
+        
+        let request:NSFetchRequest<Note> = Note.fetchRequest()
+        let folderPredicate = NSPredicate(format: "parentFolder.name=%@", selectedFolder!.name!)
+        request.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
+        
+        if let additionalPredicate = predicate{
+            request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [folderPredicate, additionalPredicate])
+        }else {
+            request.predicate = folderPredicate
+        }
+        
+        do{
+            notes = try context.fetch(request)
+        }catch{
+            print("Error loading notes \(error.localizedDescription)")
+        }
+        tableView.reloadData()
+    }
+    
+    
+    
+    
     /*
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
