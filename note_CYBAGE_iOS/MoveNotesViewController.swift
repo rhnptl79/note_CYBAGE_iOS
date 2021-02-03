@@ -62,3 +62,14 @@ class MoveNotesViewController: UIViewController {
     */
 
 }
+
+
+extension MoveNotesViewController: UITableViewDelegate, UITableViewDataSource{
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return folders.count
+    }
+
+
+
+}
