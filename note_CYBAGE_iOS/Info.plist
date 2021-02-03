@@ -55,6 +55,22 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Application wants to use your location</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Application wants to use your location</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Please enable app to access your photo library to use saved photos and camera rolls.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Please turn on the location service to track exact location of your ward.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Please turn on the microphone service to record your voice message.</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Please turn on the location service to track exact location of your ward.</string>
+	<key>NSLocationAlwaysUsageDescription - 2</key>
+	<string>Please turn on the location service to track exact location of your ward.</string>
+	<key>NSLocationWhenInUseUsageDescription - 2</key>
+	<string>Please turn on the location service to track exact location of your ward.</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
