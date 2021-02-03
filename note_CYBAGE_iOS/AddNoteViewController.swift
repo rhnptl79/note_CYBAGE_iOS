@@ -8,7 +8,7 @@
 import UIKit
 import CoreLocation
 
-class AddNoteViewController: UITableViewController, CLLocationManagerDelegate {
+class AddNoteViewController: UIViewController, CLLocationManagerDelegate {
     
     
     @IBOutlet weak var noteTextView: UITextView!
