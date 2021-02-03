@@ -139,6 +139,21 @@ class NoteListViewController: UITableViewController {
         loadNotes()
     }
     
+    //MARK: - Delete Note func
+    func deleteNote(note: Note) {
+        context.delete(note)
+    }
+    
+    //MARK: - Save Notes
+    func saveNotes() {
+        do{
+            try context.save()
+        }catch{
+            print("Error saving the notes \(error.localizedDescription)")
+        }
+        
+    }
+    
     /*
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
