@@ -208,9 +208,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="imageView" destination="a85-6Z-rud" id="yP6-Ad-akf"/>
-                        <outlet property="labelCoordinates" destination="5R8-vN-HP4" id="Ko5-Lj-OCc"/>
-                        <outlet property="noteTextView" destination="s2N-hb-qUI" id="lpZ-Cb-ND5"/>
+                        <outlet property="imageView" destination="a85-6Z-rud" id="lL9-NM-7l5"/>
+                        <outlet property="labelCoordinates" destination="5R8-vN-HP4" id="866-Hj-Xg2"/>
+                        <outlet property="noteTextView" destination="s2N-hb-qUI" id="N6R-Wz-Mum"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rEw-OF-gLp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
