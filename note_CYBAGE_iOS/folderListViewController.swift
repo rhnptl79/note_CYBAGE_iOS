@@ -42,6 +42,16 @@ class folderListViewController: UITableViewController {
         }
         tableView.reloadData()
     }
+    
+    
+    //MARK: - showAlert func
+    func showAlert() {
+        let alert = UIAlertController(title: "Name taken", message: "Please Choose Another Name", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(okAction)
+        present(alert, animated: true, completion: nil)
+    }
+    
     //MARK: - Save Folder Func
     func saveFolders() {
         do{
@@ -61,7 +71,7 @@ class folderListViewController: UITableViewController {
         let alert = UIAlertController(title: "Add new Folder", message: "Please give a name", preferredStyle: .alert)
         let addAction = UIAlertAction(title: "ADD", style: .default) { (action) in
             let folderNames = self.folders.map{$0.name?.lowercased()}
-            //guard !folderNames.contains(textField.text?.lowercased()) else {self.showAlert(); return}
+            guard !folderNames.contains(textField.text?.lowercased()) else {self.showAlert(); return}
             let newFolder = Folder(context: self.context)
             newFolder.name = textField.text!
             self.folders.append(newFolder)
