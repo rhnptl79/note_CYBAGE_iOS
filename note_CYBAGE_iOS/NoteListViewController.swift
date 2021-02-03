@@ -19,7 +19,7 @@ class NoteListViewController: UITableViewController {
     
     var selectedFolder: Folder? {
         didSet{
-            //loadNotes()
+            loadNotes()
         }
     }
     
@@ -29,7 +29,8 @@ class NoteListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.showSearchBar()
+        tableView.tableFooterView = UIView()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -51,22 +52,16 @@ class NoteListViewController: UITableViewController {
     @IBAction func editingBtnPressed(_ sender: UIBarButtonItem) {
     }
     
-    
-    
-    
-    
-    
-
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return notes.count
     }
 
     /*
