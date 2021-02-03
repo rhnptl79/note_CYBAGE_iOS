@@ -242,4 +242,28 @@ class NoteListViewController: UITableViewController {
     
 }
 
+
+//MARK: - search bar delegate method
+extension NoteListViewController: UISearchBarDelegate{
+
+    //MARK: - Search func
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        //add predicate
+        let predicate = NSPredicate(format: "title CONTAINS[cd] %@", searchBar.text!)
+        loadNotes(predicate: predicate)
+    }
+    
+    //text change
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text?.count == 0 {
+            loadNotes()
+            
+            DispatchQueue.main.async{
+                searchBar.resignFirstResponder()
+            }
+        }
+    }
 }
+     
+
+
