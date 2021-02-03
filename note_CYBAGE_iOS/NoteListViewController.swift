@@ -14,6 +14,19 @@ class NoteListViewController: UITableViewController {
     
     @IBOutlet weak var moveBtn: UIBarButtonItem!
     
+    var deletingMovingOption: Bool = false
+    var notes = [Note]()
+    
+    var selectedFolder: Folder? {
+        didSet{
+            //loadNotes()
+        }
+    }
+    
+    //Create context
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    let searchController = UISearchController(searchResultsController: nil)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
