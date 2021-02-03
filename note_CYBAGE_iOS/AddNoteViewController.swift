@@ -183,3 +183,19 @@ class AddNoteViewController: UITableViewController, CLLocationManagerDelegate {
     */
 
 }
+
+// MARK: - UIImage PickerControllerDelegate
+extension AddNoteViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    
+    func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
+        return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
+    }
+    
+
+}
