@@ -6,8 +6,12 @@
 //
 
 import UIKit
+import CoreData
 
 class folderListViewController: UITableViewController {
+    
+    var folders = [Folder]()
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,6 +21,8 @@ class folderListViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        tableView.tableFooterView = UIView()
+
     }
 
     // MARK: - Table view data source
