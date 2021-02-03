@@ -31,11 +31,25 @@ class AddNoteViewController: UITableViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.noteTextView.text = selectedNote?.title
+        self.labelCoordinates.text = selectedNote?.location
+        if let image = self.getImage(selectedNote?.imageName ?? "") {
+            self.imageView.image = image
+        }
+        else {
+            noteTextView.becomeFirstResponder()
+        }
+        self.addDoneButtonOnKeyboard()
+        
+        self.locationManager.requestAlwaysAuthorization()
+        self.locationManager.requestWhenInUseAuthorization()
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.startUpdatingLocation()
+        }
+        
+        
     }
 
     // MARK: - Table view data source
