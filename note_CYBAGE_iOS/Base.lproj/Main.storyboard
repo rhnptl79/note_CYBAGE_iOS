@@ -87,10 +87,10 @@
             </objects>
             <point key="canvasLocation" x="1634.7826086956522" y="109.82142857142857"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Note List View Controller-->
         <scene sceneID="BH5-sc-eb4">
             <objects>
-                <tableViewController id="14e-rg-7Uy" sceneMemberID="viewController">
+                <tableViewController id="14e-rg-7Uy" customClass="NoteListViewController" customModule="note_CYBAGE_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" allowsMultipleSelectionDuringEditing="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ib5-k3-wcE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -120,7 +120,7 @@
                         <leftBarButtonItems>
                             <barButtonItem title="Back" id="44a-f5-Bhw">
                                 <connections>
-                                    <action selector="backBtnTap:" destination="14e-rg-7Uy" id="TwY-jv-wiR"/>
+                                    <action selector="backBtnTap:" destination="14e-rg-7Uy" id="ZWa-oZ-zez"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem enabled="NO" title="Move Item" image="tray.and.arrow.down" catalog="system" id="3Mj-3f-Ckh">
@@ -130,14 +130,14 @@
                             </barButtonItem>
                             <barButtonItem enabled="NO" title="Trash Item" image="trash" catalog="system" id="d8y-xC-jp4">
                                 <connections>
-                                    <action selector="trashBtnPressed:" destination="14e-rg-7Uy" id="sN4-SR-uhs"/>
+                                    <action selector="trashBtnPressed:" destination="14e-rg-7Uy" id="Plv-fB-2Rb"/>
                                 </connections>
                             </barButtonItem>
                         </leftBarButtonItems>
                         <rightBarButtonItems>
                             <barButtonItem title="Editing Item" image="ellipsis" catalog="system" id="Exp-9K-Fp2">
                                 <connections>
-                                    <action selector="editingBtnPressed:" destination="14e-rg-7Uy" id="K7Z-oT-cdl"/>
+                                    <action selector="editingBtnPressed:" destination="14e-rg-7Uy" id="aUR-6V-ec9"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem title="Add notes" style="done" id="r6v-RW-Ibl">
@@ -149,8 +149,8 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="moveBtn" destination="3Mj-3f-Ckh" id="bxI-XN-kkc"/>
-                        <outlet property="trashBtn" destination="d8y-xC-jp4" id="aJC-vy-Mzy"/>
+                        <outlet property="moveBtn" destination="3Mj-3f-Ckh" id="Avc-aj-hoP"/>
+                        <outlet property="trashBtn" destination="d8y-xC-jp4" id="gj3-9y-hRM"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mdW-KC-BFx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

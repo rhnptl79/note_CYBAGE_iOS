@@ -10,6 +10,10 @@ import  CoreData
 
 class NoteListViewController: UITableViewController {
 
+    @IBOutlet weak var trashBtn: UIBarButtonItem!
+    
+    @IBOutlet weak var moveBtn: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,6 +23,26 @@ class NoteListViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
+    //MARK:- Action Methods
+    
+    @IBAction func trashBtnPressed(_ sender: UIBarButtonItem) {
+    }
+    
+    
+    @IBAction func backBtnTap(_ sender: UIBarButtonItem) {
+    }
+    
+    
+    
+    @IBAction func editingBtnPressed(_ sender: UIBarButtonItem) {
+    }
+    
+    
+    
+    
+    
+    
 
     // MARK: - Table view data source
 
