@@ -63,6 +63,13 @@ class AddNoteViewController: UITableViewController, CLLocationManagerDelegate {
         noteTextView.resignFirstResponder()
     }
     
+    @IBAction func addPhoto(_ sender: UIBarButtonItem) {
+    }
+    
+    
+    
+    
+    
     func addDoneButtonOnKeyboard(){
         let doneToolbar: UIToolbar = UIToolbar(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
         doneToolbar.barStyle = .default
@@ -75,6 +82,10 @@ class AddNoteViewController: UITableViewController, CLLocationManagerDelegate {
         doneToolbar.sizeToFit()
 
         noteTextView.inputAccessoryView = doneToolbar
+    }
+    
+    @objc func doneButtonAction(){
+        noteTextView.resignFirstResponder()
     }
 
     // MARK: - Table view data source
