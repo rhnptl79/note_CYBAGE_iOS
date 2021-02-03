@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D4518C3825CAC3CF006994B1 /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4518C3725CAC3CF006994B1 /* AddNoteViewController.swift */; };
 		EAE78AA625CA92750050328A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE78AA525CA92750050328A /* AppDelegate.swift */; };
 		EAE78AA825CA92750050328A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE78AA725CA92750050328A /* SceneDelegate.swift */; };
 		EAE78AAA25CA92750050328A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE78AA925CA92750050328A /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D4518C3725CAC3CF006994B1 /* AddNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewController.swift; sourceTree = "<group>"; };
 		EAE78AA225CA92750050328A /* note_CYBAGE_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = note_CYBAGE_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAE78AA525CA92750050328A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EAE78AA725CA92750050328A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				EAE78AAE25CA92750050328A /* note_CYBAGE_iOS.xcdatamodeld */,
 				EAE78ABD25CA9D5E0050328A /* folderListViewController.swift */,
 				EAE78AC025CAA4240050328A /* NoteListViewController.swift */,
+				D4518C3725CAC3CF006994B1 /* AddNoteViewController.swift */,
 			);
 			path = note_CYBAGE_iOS;
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4518C3825CAC3CF006994B1 /* AddNoteViewController.swift in Sources */,
 				EAE78AAA25CA92750050328A /* ViewController.swift in Sources */,
 				EAE78AA625CA92750050328A /* AppDelegate.swift in Sources */,
 				EAE78AC125CAA4240050328A /* NoteListViewController.swift in Sources */,
