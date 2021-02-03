@@ -51,6 +51,17 @@ class AddNoteViewController: UITableViewController, CLLocationManagerDelegate {
         
         
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        if editMode{
+            delegate!.deleteNote(note: selectedNote!)
+        }
+        delegate!.updateNote(with : noteTextView.text, image: imageView.image, location: labelCoordinates.text ?? "")
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        noteTextView.resignFirstResponder()
+    }
 
     // MARK: - Table view data source
 
