@@ -10,7 +10,7 @@
         <!--Folders-->
         <scene sceneID="9jn-Ac-TkY">
             <objects>
-                <tableViewController id="qJj-IT-ctB" sceneMemberID="viewController">
+                <tableViewController id="qJj-IT-ctB" customClass="folderListViewController" customModule="note_CYBAGE_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="sGS-I0-Trp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -215,7 +215,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rEw-OF-gLp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4171" y="272"/>
+            <point key="canvasLocation" x="4181" y="110"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="72N-p9-Ab3">

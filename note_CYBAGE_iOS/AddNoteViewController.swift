@@ -127,6 +127,9 @@ class AddNoteViewController: UITableViewController, CLLocationManagerDelegate {
         return 0
     }
 
+    
+    //Confirming The Add notes part
+    
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
