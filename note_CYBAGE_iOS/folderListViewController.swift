@@ -42,7 +42,43 @@ class folderListViewController: UITableViewController {
         }
         tableView.reloadData()
     }
-
+    //MARK: - Save Folder Func
+    func saveFolders() {
+        do{
+            try context.save()
+            tableView.reloadData()
+        }catch{
+            print("Erro saving the folder \(error.localizedDescription)")
+        }
+    }
+    
+    //MARK:- Action Method
+    
+    
+    @IBAction func addFolderBtnPressed(_ sender: UIBarButtonItem) {
+        
+        var textField = UITextField()
+        let alert = UIAlertController(title: "Add new Folder", message: "Please give a name", preferredStyle: .alert)
+        let addAction = UIAlertAction(title: "ADD", style: .default) { (action) in
+            let folderNames = self.folders.map{$0.name?.lowercased()}
+            //guard !folderNames.contains(textField.text?.lowercased()) else {self.showAlert(); return}
+            let newFolder = Folder(context: self.context)
+            newFolder.name = textField.text!
+            self.folders.append(newFolder)
+            self.saveFolders()
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(addAction)
+        alert.addAction(cancelAction)
+        alert.addTextField { (field) in
+            textField = field
+            textField.placeholder = "Please Provide folder name"
+        }
+        present(alert, animated: true, completion: nil)
+        
+    }
+    
+    
     // MARK: - Table view data source
 
     /*override func numberOfSections(in tableView: UITableView) -> Int {
