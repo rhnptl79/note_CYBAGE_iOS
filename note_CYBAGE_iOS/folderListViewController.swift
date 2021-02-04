@@ -153,9 +153,16 @@ class folderListViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        let destination = segue.destination as! NoteListViewController
-        if let indexPath = tableView.indexPathForSelectedRow{
-            destination.selectedFolder = folders[indexPath.row]
+        
+        if (segue.identifier == "segue1"){
+            let destination = segue.destination as! NoteListViewController
+            if let indexPath = tableView.indexPathForSelectedRow{
+                destination.selectedFolder = folders[indexPath.row]
+            }
+        }
+        else if (segue.identifier == "segue2")
+        {
+            print(" ")
         }
 
     }

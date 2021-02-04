@@ -18,8 +18,6 @@ class AudioViewController: UIViewController, AVAudioRecorderDelegate, UITableVie
     
     @IBOutlet weak var myTableView: UITableView!
     
-    
-    
     @IBOutlet weak var buttonLbl: UIButton!
     
     @IBAction func record(_ sender: UIButton) {

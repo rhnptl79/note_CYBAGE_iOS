@@ -42,7 +42,7 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
-                                    <segue destination="14e-rg-7Uy" kind="show" id="Ja8-2r-LZX"/>
+                                    <segue destination="14e-rg-7Uy" kind="show" identifier="segue1" id="Ja8-2r-LZX"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -53,6 +53,11 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Folders" id="Lgy-AR-3Iy">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="antenna.radiowaves.left.and.right" catalog="system" id="yO6-RX-riw">
+                            <connections>
+                                <segue destination="R7l-3w-Anv" kind="show" identifier="segue2" id="t5e-tt-ukp"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="New Folder" image="folder.badge.plus" catalog="system" id="TBx-vu-Vxq">
                             <connections>
                                 <action selector="addFolderBtnPressed:" destination="qJj-IT-ctB" id="rm2-BL-pCu"/>
@@ -300,7 +305,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j3A-gE-vTv">
-                                <rect key="frame" x="41" y="123" width="335" height="76"/>
+                                <rect key="frame" x="41" y="167" width="335" height="76"/>
                                 <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="335" id="47N-7b-xfa"/>
@@ -311,7 +316,7 @@
                                     <color key="titleColor" systemColor="labelColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="record:" destination="R7l-3w-Anv" eventType="touchUpInside" id="s4p-Hx-f9A"/>
+                                    <action selector="record:" destination="R7l-3w-Anv" eventType="touchUpInside" id="1WI-sY-10d"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2G7-Ge-xru">
@@ -349,8 +354,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="mLK-C8-Wbg"/>
                     <connections>
-                        <outlet property="buttonLbl" destination="j3A-gE-vTv" id="17o-jY-Ad4"/>
-                        <outlet property="myTableView" destination="2G7-Ge-xru" id="4rw-vO-wTl"/>
+                        <outlet property="buttonLbl" destination="j3A-gE-vTv" id="gvW-cQ-PRw"/>
+                        <outlet property="myTableView" destination="2G7-Ge-xru" id="Mua-3A-M2G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SND-6c-Z26" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -362,6 +367,7 @@
         <segue reference="HTw-jr-Vtl"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="antenna.radiowaves.left.and.right" catalog="system" width="128" height="109"/>
         <image name="ellipsis" catalog="system" width="128" height="37"/>
         <image name="folder.badge.plus" catalog="system" width="128" height="91"/>
         <image name="trash" catalog="system" width="121" height="128"/>
