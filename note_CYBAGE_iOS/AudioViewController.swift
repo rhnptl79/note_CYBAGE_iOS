@@ -33,6 +33,23 @@ class AudioViewController: UIViewController, AVAudioRecorderDelegate, UITableVie
         
     }
     
+    
+    //Function that gets path directory
+    func getDirectory() -> URL{
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let documentDirectory = paths[0]
+        return documentDirectory
+    }
+
+    //Function that display an alert
+    func displayAlert(title: String, message: String)
+    {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+        
+    }
+    
 
     /*
     // MARK: - Navigation
