@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D4518C3825CAC3CF006994B1 /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4518C3725CAC3CF006994B1 /* AddNoteViewController.swift */; };
+		EA75BEBB25CC127E0021E4A4 /* AudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA75BEBA25CC127E0021E4A4 /* AudioViewController.swift */; };
 		EAE78AA625CA92750050328A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE78AA525CA92750050328A /* AppDelegate.swift */; };
 		EAE78AA825CA92750050328A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE78AA725CA92750050328A /* SceneDelegate.swift */; };
 		EAE78AAA25CA92750050328A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE78AA925CA92750050328A /* ViewController.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		D4518C3725CAC3CF006994B1 /* AddNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewController.swift; sourceTree = "<group>"; };
+		EA75BEBA25CC127E0021E4A4 /* AudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioViewController.swift; sourceTree = "<group>"; };
 		EAE78AA225CA92750050328A /* note_CYBAGE_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = note_CYBAGE_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAE78AA525CA92750050328A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EAE78AA725CA92750050328A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				EAE78AC025CAA4240050328A /* NoteListViewController.swift */,
 				D4518C3725CAC3CF006994B1 /* AddNoteViewController.swift */,
 				EAEB419B25CB080900A08002 /* MoveNotesViewController.swift */,
+				EA75BEBA25CC127E0021E4A4 /* AudioViewController.swift */,
 			);
 			path = note_CYBAGE_iOS;
 			sourceTree = "<group>";
@@ -157,6 +160,7 @@
 				EAE78AA625CA92750050328A /* AppDelegate.swift in Sources */,
 				EAE78AC125CAA4240050328A /* NoteListViewController.swift in Sources */,
 				EAE78AB025CA92750050328A /* note_CYBAGE_iOS.xcdatamodeld in Sources */,
+				EA75BEBB25CC127E0021E4A4 /* AudioViewController.swift in Sources */,
 				EAE78ABE25CA9D5E0050328A /* folderListViewController.swift in Sources */,
 				EAE78AA825CA92750050328A /* SceneDelegate.swift in Sources */,
 				EAEB419C25CB080900A08002 /* MoveNotesViewController.swift in Sources */,

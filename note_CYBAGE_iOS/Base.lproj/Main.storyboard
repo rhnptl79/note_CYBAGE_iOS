@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -290,6 +291,72 @@
             </objects>
             <point key="canvasLocation" x="3342" y="839"/>
         </scene>
+        <!--Audio View Controller-->
+        <scene sceneID="Tqe-b3-9xB">
+            <objects>
+                <viewController storyboardIdentifier="audioVC" id="R7l-3w-Anv" customClass="AudioViewController" customModule="note_CYBAGE_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Gsg-bK-rHg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j3A-gE-vTv">
+                                <rect key="frame" x="41" y="123" width="335" height="76"/>
+                                <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="335" id="47N-7b-xfa"/>
+                                    <constraint firstAttribute="height" constant="76" id="WBV-fU-KmF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="30"/>
+                                <state key="normal" title="Start Recording">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="record:" destination="R7l-3w-Anv" eventType="touchUpInside" id="s4p-Hx-f9A"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2G7-Ge-xru">
+                                <rect key="frame" x="0.0" y="301" width="414" height="595"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="595" id="AZQ-uS-GFp"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="EKx-eD-qfB">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EKx-eD-qfB" id="liW-Lg-XIj">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="R7l-3w-Anv" id="tci-UJ-cVR"/>
+                                    <outlet property="delegate" destination="R7l-3w-Anv" id="6RC-Vs-2z7"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="oM8-FC-OXm"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="2G7-Ge-xru" firstAttribute="leading" secondItem="oM8-FC-OXm" secondAttribute="leading" id="63C-b7-eXd"/>
+                            <constraint firstItem="oM8-FC-OXm" firstAttribute="trailing" secondItem="j3A-gE-vTv" secondAttribute="trailing" constant="38" id="9sU-Bf-Buy"/>
+                            <constraint firstAttribute="bottom" secondItem="2G7-Ge-xru" secondAttribute="bottom" id="D83-jb-jfL"/>
+                            <constraint firstItem="2G7-Ge-xru" firstAttribute="trailing" secondItem="oM8-FC-OXm" secondAttribute="trailing" id="Z98-bR-91q"/>
+                            <constraint firstItem="j3A-gE-vTv" firstAttribute="top" secondItem="oM8-FC-OXm" secondAttribute="top" constant="79" id="xg4-wF-4Ob"/>
+                            <constraint firstItem="j3A-gE-vTv" firstAttribute="leading" secondItem="oM8-FC-OXm" secondAttribute="leading" constant="41" id="zCV-gc-65K"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="mLK-C8-Wbg"/>
+                    <connections>
+                        <outlet property="buttonLbl" destination="j3A-gE-vTv" id="17o-jY-Ad4"/>
+                        <outlet property="myTableView" destination="2G7-Ge-xru" id="4rw-vO-wTl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SND-6c-Z26" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2296" y="838"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="HTw-jr-Vtl"/>
@@ -299,5 +366,11 @@
         <image name="folder.badge.plus" catalog="system" width="128" height="91"/>
         <image name="trash" catalog="system" width="121" height="128"/>
         <image name="tray.and.arrow.down" catalog="system" width="128" height="109"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
