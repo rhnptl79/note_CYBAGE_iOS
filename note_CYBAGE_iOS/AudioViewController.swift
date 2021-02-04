@@ -50,6 +50,30 @@ class AudioViewController: UIViewController, AVAudioRecorderDelegate, UITableVie
         
     }
     
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return numberOfRecords
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = String(indexPath.row + 1)
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let path = getDirectory().appendingPathComponent("\(indexPath.row + 1).m4a")
+        
+        do{
+            audioPlayer = try AVAudioPlayer(contentsOf: path)
+            audioPlayer.play()
+        }catch{
+            
+        }
+    }
+    
+    
 
     /*
     // MARK: - Navigation
