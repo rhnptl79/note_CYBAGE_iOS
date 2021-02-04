@@ -15,6 +15,47 @@ class AudioViewController: UIViewController, AVAudioRecorderDelegate, UITableVie
     var numberOfRecords:Int = 0
     var audioPlayer: AVAudioPlayer!
     
+    
+    @IBOutlet weak var myTableView: UITableView!
+    
+    
+    
+    @IBOutlet weak var buttonLbl: UIButton!
+    
+    @IBAction func record(_ sender: UIButton) {
+        
+        //check if we have an active recorder
+        if audioRecorder == nil{
+            numberOfRecords += 1
+            let filename = getDirectory().appendingPathComponent("\(numberOfRecords).m4a")
+            
+            let settings = [AVFormatIDKey: Int(kAudioFormatMPEG4AAC), AVSampleRateKey: 1200, AVNumberOfChannelsKey: 1, AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue]
+            
+            //Start Audio Recording
+            do{
+                audioRecorder = try AVAudioRecorder(url: filename, settings: settings)
+                audioRecorder.delegate = self
+                audioRecorder.record()
+                
+                buttonLbl.setTitle("Stop Recording", for: .normal)
+            }catch{
+                displayAlert(title: "Ooooops! ", message: "Recording Faild")
+            }
+        }
+        else{
+            //Stop Recording
+            audioRecorder.stop()
+            audioRecorder = nil
+            
+            UserDefaults.standard.setValue(numberOfRecords, forKey: "myNumber")
+            myTableView.reloadData()
+            
+            buttonLbl.setTitle("Start Recording", for: .normal)
+        }
+    }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
