@@ -155,6 +155,8 @@ class NoteListViewController: UITableViewController {
     
     //MARK: - Delete Note func
     func deleteNote(note: Note) {
+        
+        selectedFolder?.removeFromNotes(note)
         context.delete(note)
     }
     
