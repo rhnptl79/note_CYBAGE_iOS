@@ -7,12 +7,30 @@
 
 import UIKit
 import AVFoundation
-class AudioViewController: UIViewController {
 
+class AudioViewController: UIViewController, AVAudioRecorderDelegate, UITableViewDelegate, UITableViewDataSource  {
+
+    var recordingSession: AVAudioSession!
+    var audioRecorder: AVAudioRecorder!
+    var numberOfRecords:Int = 0
+    var audioPlayer: AVAudioPlayer!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        //Setting up Seesion
+        recordingSession = AVAudioSession.sharedInstance()
+        
+        if let number: Int = UserDefaults.standard.object(forKey: "myNumber") as? Int{
+            numberOfRecords = number
+        }
+        
+        AVAudioSession.sharedInstance().requestRecordPermission { (hasPermission) in
+            if hasPermission{
+                print("ACCEPTED")
+            }
+        }
+        
     }
     
 
